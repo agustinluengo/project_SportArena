@@ -1,0 +1,17 @@
+<!-- users/templates/users/signup.html -->
+{% block content %}
+    <div class="content-section">
+        <h2>SignUp</h2>
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+    
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+            <div class="border-top pt-3">
+                <small>Already Have Account?<a href="{% url 'login' %}" class="ml-2">Log In</a></small>
+            </div>
+        </form>
+    </div>
+{% endblock %}
